@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+  <fullName>Delivered_Needs_Agent</fullName>
+  <active>true</active>
+  <errorConditionFormula>AND(ISPICKVAL(Status__c,"Delivered"), ISBLANK(Delivery_Agent__c))</errorConditionFormula>
+  <errorDisplayField>Delivery_Agent__c</errorDisplayField>
+  <errorMessage>Assign a delivery agent before marking the shipment as Delivered.</errorMessage>
+</ValidationRule>

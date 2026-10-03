@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+  <aggregates><calculatedFormula>Shipping_Cost__c:SUM</calculatedFormula><datatype>currency</datatype><developerName>FORMULA1</developerName><isActive>true</isActive><isCrossBlock>false</isCrossBlock><masterLabel>Total Revenue</masterLabel><scale>2</scale></aggregates>
+  <chart>
+    <backgroundColor1>#FFFFFF</backgroundColor1><backgroundColor2>#FFFFFF</backgroundColor2><backgroundFadeDir>Diagonal</backgroundFadeDir>
+    <chartSummaries><axisBinding>y</axisBinding><column>FORMULA1</column></chartSummaries>
+    <chartType>Column</chartType><enableHoverLabels>false</enableHoverLabels><expandOthers>true</expandOthers><groupingColumn>Branch__c</groupingColumn><location>CHART_BELOW_TABLE</location><showAxisLabels>true</showAxisLabels><showPercentage>false</showPercentage><showTotal>false</showTotal><showValues>false</showValues><size>Medium</size><summaryAxisRange>Auto</summaryAxisRange><textColor>#000000</textColor><textSize>12</textSize><titleColor>#000000</titleColor><titleSize>18</titleSize>
+  </chart>
+  <columns><field>CUST_NAME</field></columns>
+  <columns><field>Status__c</field></columns>
+  <columns><field>Customer__c</field></columns>
+  <columns><field>Branch__c</field></columns>
+  <columns><field>Delivery_Agent__c</field></columns>
+  <columns><field>Shipping_Cost__c</field></columns>
+  <columns><field>Shipment_Date__c</field></columns>
+  <columns><field>Expected_Delivery_Date__c</field></columns>
+  <format>Summary</format>
+  <groupingsDown><dateGranularity>Day</dateGranularity><field>Branch__c</field><sortOrder>Asc</sortOrder></groupingsDown>
+  <name>Shipment Revenue by Branch</name>
+  <reportType>Shipment__c</reportType>
+  <scope>organization</scope>
+  <showDetails>true</showDetails>
+  <showGrandTotal>true</showGrandTotal>
+  <showSubTotals>true</showSubTotals>
+</Report>

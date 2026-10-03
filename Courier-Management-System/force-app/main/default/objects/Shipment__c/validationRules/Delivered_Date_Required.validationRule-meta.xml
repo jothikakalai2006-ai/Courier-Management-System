@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+  <fullName>Delivered_Date_Required</fullName>
+  <active>true</active>
+  <errorConditionFormula>AND(ISPICKVAL(Status__c,"Delivered"), ISBLANK(Actual_Delivery_Date__c))</errorConditionFormula>
+  <errorDisplayField>Actual_Delivery_Date__c</errorDisplayField>
+  <errorMessage>Actual delivery date is required when a shipment is Delivered.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+  <fullName>Agent_Phone_Required</fullName>
+  <active>true</active>
+  <errorConditionFormula>OR(ISBLANK(Phone__c), LEN(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(Phone__c," ",""),"-",""),"+",""),"(","")) &lt; 10)</errorConditionFormula>
+  <errorDisplayField>Phone__c</errorDisplayField>
+  <errorMessage>Enter a valid agent phone number with at least 10 digits.</errorMessage>
+</ValidationRule>

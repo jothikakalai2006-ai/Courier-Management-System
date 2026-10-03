@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+  <apiVersion>62.0</apiVersion>
+  <description>Creates an Unpaid invoice (due in 30 days) whenever a Shipment is created.</description>
+  <environments>Default</environments>
+  <interviewLabel>Create Invoice For Shipment {!$Flow.CurrentDateTime}</interviewLabel>
+  <label>Create Invoice For Shipment</label>
+  <processMetadataValues><name>BuilderType</name><value><stringValue>LightningFlowBuilder</stringValue></value></processMetadataValues>
+  <processType>AutoLaunchedFlow</processType>
+  <formulas>
+    <name>DueDate</name>
+    <dataType>Date</dataType>
+    <expression>{!$Flow.CurrentDate} + 30</expression>
+  </formulas>
+  <recordCreates>
+    <name>Create_Invoice</name>
+    <label>Create Invoice</label>
+    <locationX>50</locationX>
+    <locationY>180</locationY>
+    <inputAssignments><field>Shipment__c</field><value><elementReference>$Record.Id</elementReference></value></inputAssignments>
+    <inputAssignments><field>Amount__c</field><value><elementReference>$Record.Shipping_Cost__c</elementReference></value></inputAssignments>
+    <inputAssignments><field>Invoice_Date__c</field><value><elementReference>$Flow.CurrentDate</elementReference></value></inputAssignments>
+    <inputAssignments><field>Due_Date__c</field><value><elementReference>DueDate</elementReference></value></inputAssignments>
+    <inputAssignments><field>Payment_Status__c</field><value><stringValue>Unpaid</stringValue></value></inputAssignments>
+    <object>Invoice__c</object>
+  </recordCreates>
+  <start>
+    <locationX>50</locationX>
+    <locationY>0</locationY>
+    <connector><targetReference>Create_Invoice</targetReference></connector>
+    <object>Shipment__c</object>
+    <recordTriggerType>Create</recordTriggerType>
+    <triggerType>RecordAfterSave</triggerType>
+  </start>
+  <status>Active</status>
+</Flow>

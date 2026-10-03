@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+  <types><members>*</members><name>CustomObject</name></types>
+  <types><members>*</members><name>CustomTab</name></types>
+  <types><members>*</members><name>CustomApplication</name></types>
+  <types><members>*</members><name>Flow</name></types>
+  <types><members>*</members><name>Role</name></types>
+  <types><members>*</members><name>PermissionSet</name></types>
+  <types><members>Courier Admin</members><members>Branch Manager</members><members>Delivery Agent</members><members>Customer Support</members><name>Profile</name></types>
+  <types><members>*</members><name>ReportFolder</name></types>
+  <types><members>*</members><name>Report</name></types>
+  <types><members>*</members><name>DashboardFolder</name></types>
+  <types><members>*</members><name>Dashboard</name></types>
+  <version>62.0</version>
+</Package>
